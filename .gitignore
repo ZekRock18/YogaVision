@@ -14,13 +14,15 @@ build/
 venv/
 env/
 
-# Data and models - generated artifacts, too large for git
+# Data - generated artifacts, too large for git
 data/raw/
 data/processed/
-models/
 outputs/
-# keep the label map (tiny, needed to run the app)
+
+# Models - gitignore the whole folder except the two tiny files we keep
+models/*
 !models/label_map.json
+!models/fix_model.bat
 *.db
 
 # Logs
