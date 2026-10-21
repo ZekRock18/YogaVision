@@ -1,0 +1,17 @@
+{
+  "labels": [
+    "downdog",
+    "goddess",
+    "plank",
+    "tree",
+    "warrior2"
+  ],
+  "num_classes": 5,
+  "index_to_label": {
+    "0": "downdog",
+    "1": "goddess",
+    "2": "plank",
+    "3": "tree",
+    "4": "warrior2"
+  }
+}

@@ -14,16 +14,13 @@ build/
 venv/
 env/
 
-# Data and models
+# Data and models - generated artifacts, too large for git
 data/raw/
 data/processed/
-models/*.h5
-models/*.keras
-models/*.pt
-models/*.onnx
-models/label_map.json
-models/checkpoints/
+models/
 outputs/
+# keep the label map (tiny, needed to run the app)
+!models/label_map.json
 *.db
 
 # Logs
