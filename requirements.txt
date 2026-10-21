@@ -1,0 +1,28 @@
+# YogaVision requirements — pinned for reproducibility
+# Core ML
+tensorflow==2.19.0
+numpy==2.3.1
+pandas==2.3.0
+scikit-learn==1.7.0
+Pillow==12.3.0
+PyYAML==6.0.3
+
+# Computer Vision
+opencv-python==4.11.0.86
+opencv-contrib-python==4.11.0.86
+mediapipe==0.10.21
+
+# Visualization
+matplotlib==3.10.3
+seaborn==0.13.2
+
+# UI
+streamlit==1.44.1
+streamlit-option-menu==0.4.0
+
+# Testing
+pytest==8.3.5
+pytest-cov==6.1.1
+
+# Utilities
+python-dotenv==1.0.1

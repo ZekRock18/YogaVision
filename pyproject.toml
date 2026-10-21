@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yogavision"
+version = "1.0.0"
+description = "Real-Time Yoga Pose Classification and Feedback System"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Prakhar Gupta"}]
+requires-python = ">=3.10"
+dependencies = [
+    "tensorflow==2.19.0",
+    "numpy==2.3.1",
+    "pandas==2.3.0",
+    "scikit-learn==1.7.0",
+    "Pillow==12.3.0",
+    "PyYAML==6.0.3",
+    "opencv-python==4.11.0.86",
+    "opencv-contrib-python==4.11.0.86",
+    "mediapipe==0.10.21",
+    "matplotlib==3.10.3",
+    "seaborn==0.13.2",
+    "streamlit==1.44.1",
+    "streamlit-option-menu==0.4.0",
+    "pytest==8.3.5",
+    "pytest-cov==6.1.1",
+    "python-dotenv==1.0.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=4.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

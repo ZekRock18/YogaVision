@@ -1,0 +1,52 @@
+# YogaVision training configuration
+# Used by scripts/train.py --config configs/train.yaml
+
+seed: 42
+
+data:
+  # Raw dataset (original images, one sub-folder per class)
+  raw_dir: data/raw/DATASET
+  # Processed dataset (skeleton or RGB images, one sub-folder per class)
+  dataset_dir: data/processed/yoga_poses_skeleton
+  image_size: [75, 75]
+  input_representation: skeleton   # 'skeleton' (paper) or 'rgb'
+  validation_split: 0.2
+  test_split: 0.1
+  class_names: [downdog, goddess, plank, tree, warrior2]
+
+model:
+  architecture: yogaconv2d        # faithful reproduction of the paper's CNN
+  output_dir: models
+  model_name: yoga_cnn.keras
+  label_map_name: label_map.json
+  dropout: 0.25
+  dense_dropout: 0.5
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.001
+  optimizer: adam
+  early_stopping_patience: 8
+  reduce_lr_patience: 4
+  reduce_lr_factor: 0.5
+
+augmentation:
+  width_shift_range: 0.1
+  horizontal_flip: true
+  rotation_range: 0
+
+inference:
+  confidence_threshold: 0.60
+  smoothing_window: 5
+
+mediapipe:
+  min_detection_confidence: 0.5
+  min_tracking_confidence: 0.5
+
+feedback:
+  min_landmark_visibility: 0.5
+  min_visible_fraction: 0.6
+  symmetry_tolerance_deg: 20.0
+  shoulder_tilt_tolerance_deg: 15.0
+  hip_tilt_tolerance_deg: 15.0
